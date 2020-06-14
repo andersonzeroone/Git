@@ -3,12 +3,12 @@
 
 <img src="./img/img0.png" width="900" height="400" >
 
-* [Para que serve o Git?](#Para-que-serve-o-Git?);   
+* [Para que serve o Git?](#Para-que-serve-o-Git-?);   
 * [instalação](#Instalação);
 * [Configurando o  user](#Configurando-o-user);
 * [Inicialização criando um novo repositório](#Inicialização-criando-um-novo-repositório);
 * [Monitorando arquivos](#Monitorando-arquivos);
-* [Historico de alterações](#Historico-de-alterações); 
+* [Historico de alterações](#Histórico-de-alterações); 
 * [Git ignore](#Git-ignore); 
 * [Repositório remoto](#Repositório-remoto); 
 * [Clonando repositório ](#Clonando-repositório); 
@@ -42,7 +42,7 @@ A instalação padrão e clicando em "Next". Em "Adjusting your PATH environment
 Finalizada a instalação, podem desmarcar o box de "View Release Notes" e marcar "Launch Git Bash", para que se inicie a execução do Git Bash.
 para garantir que tudo ocorreu bem no terminal digiti git --version, ao que será retornado git e a versão instalada.
 
-## Configurando o  user 
+## Configurando o user 
 
 Antes de utilizar o git precisa informa quem é o usuário para que ele possa salvar os dados do autor das alterações.
 
