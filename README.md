@@ -76,7 +76,7 @@ Para inicializar o repositório é preciso criar uma pasta com ou sem um projeto
     git init.
 ```
 
-<img src="./img/01.png" width="900" height="400" >
+<img src="./img/01.png" width="800" height="100" >
 
 Todas as alterações que forem realizadas no arquivo localizado dentro deste repositório poderão ser mostradas pelo Git com algumas informações como, indicações do que foi modificado, quem modificou e outras. No final após criar será adicionado o do Git Bash ((master)).
 
@@ -88,7 +88,7 @@ Para verificar  o estado do repositório, ou analisar quais arquivos foram alter
  //comando
   git status.
 ```
-<img src="./img/02.jpg" width="900" height="400" >
+<img src="./img/02.jpg" width="900" height="300" >
 
 na mensagem será exibido algumas informações como, Untracked files, indica que há arquivos não monitorados no projeto, são arquivos que ainda não foram adicionados para o envio de uma nova atualização "commitar". para adcicionar esse arquivo é preciso utlizar o comando, git add nomeDoArquivo.
 
@@ -113,7 +113,7 @@ Caso haja arquivos que nunca foi editado e salvo pelo Git, basta utilizar o coma
 // com o ponto no final
 
 ```
-<img src="./img/03.png" width="900" height="400" >
+<img src="./img/03.png" width="900" height="200" >
 
 Com isso, se rodar o git status, irá aparecer um retorno, incluindo Changes to committed, isto é, "mudanças a serem commitadas", ou salvas, enviadas.
 
@@ -126,7 +126,7 @@ Para salvar as modificações é preciso rodar comando git commit porém precisa
 
 ```
 
-<img src="./img/04.png" width="900" height="400" >
+<img src="./img/04.png" width="900" height="100" >
 
 Após executar o comando será exibido a mensagem que configuramos e será mostrado quais foram as alterações.Se executarmos git status novamente irá mostrar que não há nada para ser commitado.
 
