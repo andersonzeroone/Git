@@ -3,7 +3,7 @@
 
 <img src="./img/img0.png" width="800" height="300">
 
-* [Para que serve o Git?](#Para-que-serve-o-Git)?;   
+* [Para que serve o Git?](#Para-que-serve-o-Git);   
 * [instalação](#Instalação);
 * [Configurando o  user](#Configurando-o-user);
 * [Inicialização criando um novo repositório](#Inicialização-criando-um-novo-repositório);
@@ -13,9 +13,11 @@
 * [Repositório remoto](#Repositório-remoto); 
 * [Clonando repositório ](#Clonando-repositório); 
 * [Branches](#Branches); 
-* [Resolvendo conflitos](#Resolvendo-conflitos)
+* [Resolvendo conflitos](#Resolvendo-conflitos);
+* [Git stash](#Git-stash);
+*[Voltando para um commit antigo](#Voltando-para-um-commit-antigo);
 
-### Para que serve o Git
+### Para que serve o Git ?
 
 É comum quando se trabalho com desenvolvimento, trabalhar com mais de uma pessoa no mesmo projeto. E com isso cada pessoa tem o projeto em sua maquina e as mesmas faram alterações ao logo do desenvolvimento. Quando uma  pessoa faz uma alteração no projeto, as outras precisam ser notificadas sobre o enviou dessas alterações, o envio por meios físicos como pendrives, HD externo não seria muito interessante até por que no momento da entrega de uma alteração outra já poderia ter sido feita. Essa situação séria um pouco confuso e poderia trazer alguns problemas durante o desenvolvimento, por isso existi algumas soluções e uma dela é a criação de um servidor específico para o envio das alterações dos arquivos onde todos da equipe tem acesso a este servidor.
 O servidor precisa ter alguma ferramenta capaz de identificar que a versão enviada não é a mais recente e não permitir o envio do projeto sem antes o usuário baixar a atual versão do projeto já que antes do envio das suas alterações ocorreram uma ou mais alterações no projeto. Isso é chamado de controle de versão. E é isso que o GIT faz, mas existem outros sistemas de controle de versão como:
@@ -88,7 +90,7 @@ Para verificar  o estado do repositório, ou analisar quais arquivos foram alter
  //comando
   git status.
 ```
-<img src="./img/02.jpg" width="500" height="300">
+<img src="./img/02.jpg" width="500" height="150">
 
 na mensagem será exibido algumas informações como, Untracked files, indica que há arquivos não monitorados no projeto, são arquivos que ainda não foram adicionados para o envio de uma nova atualização "commitar". para adcicionar esse arquivo é preciso utlizar o comando, git add nomeDoArquivo.
 
@@ -113,7 +115,7 @@ Caso haja arquivos que nunca foi editado e salvo pelo Git, basta utilizar o coma
 // com o ponto no final
 
 ```
-<img src="./img/03.png" width="500" height="300">
+<img src="./img/03.png" width="500" height="150">
 
 Com isso, se rodar o git status, irá aparecer um retorno, incluindo Changes to committed, isto é, "mudanças a serem commitadas", ou salvas, enviadas.
 
@@ -249,10 +251,77 @@ Já no código irá aparecer linhas como  <<<<<<< HEAD (Current Change) e ======
 
 Após editar e salvar o arquivo executar o git status para verificar as informações dos arquivos modificados e em seguida executar git add nomeDoArquivo e depois o git commit para que o commit de merge seja realizado para enviar os arquivos execute git push local master.
 
-Editaremos e salvaremos o arquivo, retornaremos ao Git Bash e executaremos git status, e teremos a informação de que houve uma modificação em dois lugares, na branch atual e aquela que estamos tentando unificar. Feita a correção, simplesmente utilizaremos git add index.html, e então git commit para que o commit de merge seja realizado. Desta vez, se executarmos git log --graph, teremos a indicação do merge de lista. Em seguida, poderemos usar git push local master.
+## Ctrl + Z no Git
+
+#### Desfazer alterações em arquivos não marcados para commit (git add).
+Quando queremos desfazer alguma ação no git é preciso verificar algumas situações como por exemplo, se tem algo marcado para commit através do git add. Se ainda não foi utilizado o git add para commit o arquivo basta utilizar o comando git checkout -- nomeDoArquivo.
+
+```css
+    git checkout -- nomeDoArquivo
+```
+
+#### Desfazer alterações em arquivos marcados para commit (git add).
+
+Para desfazer modificações que foram marcadas para commit usando o git add, com o git status é possível verificar quais arquivos estão marcados, para mudar isso é preciso executar git reset HEAD seguido do nome do arquivo a ser desmarcado. O HEAD indica para qual estado voltara o arquivo nesse caso voltará para o local onde ainda estamos trabalhando, se execultar o git status irá verificar que não possui arquivos a serem comitados para desfazer as alterações execute git checkout -- nomeDoArquivo.
+
+#### Desfazer alterações em arquivos depois do commit.
+
+Para desfazer alterações que sofreram commit é necessário identificar o hash(identificação única) do commit através do comando git log, após copiar a hash , use juntamente com o comando git revert use a hash dessa forma será criado um commit com as alterações desfeitas.
+
+```css
+    git revert b809d819c15f49bc6f40f79c5ea7986c8616f992 
+```
+
+## Git stash
+
+No git é possível salvar um ponto de alteração temporário sem necessidade de commit, podendo salvar uma parte do projeto e da continuidade em outro ponto. Isso devido a um conceito chamado Stash, com ele conseguimos salvar todas as alterações em um local temporário sem precisar de um commit. O stash possui alguns comandos como:
+
+Salvar as alterações em um local temporário;
+
+```css
+    git stash  
+```
+ Mostra a lista de pontos salvos.
+
+```css
+    git  stash list 
+```
+
+Para voltar a trabalhar com esses pontos salvos é preciso executar o git stash list e identificar pelo número da stash quer retornar.
+Depois aplicar o comando git stash apply e o número da stash. Dessa forma irá aplicar as modificações, porém, esse ponto ainda ficará no stash list, para deleter execute git stash drop.
+
+```css
+    git stash apply 0 //aplicar modificação salva
+    git stash drop // deletar da lista de stash list
+```
+
+## Voltando para um commit antigo
+
+No git é possível retornar para um commit anteriores, sendo necessário apenas identificar o seu hash através do comando git log --oneline, o hash nesse comando exibir apenas os sete primeiros dígitos que já é suficiente para identificar o commit pelo hash.
+
+
+<img src="./img/12.png" width="500" height="75">
+
+Para acessar um commit basta executar git checkout ea539b3, assim estará acesso o commit indica. Porém, dessa forma as alterações feitas nesse local não serão salvas quando retorna para a master por que ele não gera uma nova branch. Observe na imagem que ao acessar o segundo commit com a hash ea539b3e e retorna para o master as alterações não foram salvas.
+
+Acessando o commit
+
+<img src="./img/13.png" width="500" height="300">
+
+Retornando para o master:
+
+<img src="./img/14.png" width="500" height="300">
+
+
+Para salvar essas alterações quando retorna para o master é preciso acessar o commit desejado com o comando git checkout e em seguida criar uma branch com isso os commits serão salvos quando voltar para o master:
+
+<img src="./img/15.png" width="500" height="300">
+
+Agora quando quiser retornar a trabalha com a branch criada basta rodar o comando git checkout.
+
 
 Fonte:
- https://git-scm.com/docs/git-init;
- https://git-scm.com/book/pt-br/v2;
- http://bacana.one/como-usar-o-git-com-varios-repositorios-remotos;
- https://rogerdudler.github.io/git-guide/index.pt_BR.html;
+ * https://git-scm.com/docs/git-init;
+ * https://git-scm.com/book/pt-br/v2;
+ * http://bacana.one/como-usar-o-git-com-varios-repositorios-remotos;
+ * https://rogerdudler.github.io/git-guide/index.pt_BR.html;
