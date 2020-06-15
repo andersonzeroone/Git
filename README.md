@@ -67,7 +67,6 @@ git config --local user.email "seu@email.aqui"
     config --local  user.email "seu email"
 ```
 
-
 ## Inicialização criando um novo repositório.
 
 Para inicializar o repositório é preciso criar uma pasta com ou sem um projeto e executar o seguinte comando:
