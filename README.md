@@ -1,7 +1,7 @@
 # Git
 
 
-<img src="./img/img0.png" width="900" height="400" >
+<img src="./img/img0.png" width="800" height="300">
 
 * [Para que serve o Git?](#Para-que-serve-o-Git)?;   
 * [instalação](#Instalação);
@@ -77,7 +77,7 @@ Para inicializar o repositório é preciso criar uma pasta com ou sem um projeto
     git init.
 ```
 
-<img src="./img/01.png" width="900" height="400" >
+<img src="./img/01.png" width="500" height="300">
 
 Todas as alterações que forem realizadas no arquivo localizado dentro deste repositório poderão ser mostradas pelo Git com algumas informações como, indicações do que foi modificado, quem modificou e outras. No final após criar será adicionado o do Git Bash ((master)).
 
@@ -89,7 +89,7 @@ Para verificar  o estado do repositório, ou analisar quais arquivos foram alter
  //comando
   git status.
 ```
-<img src="./img/02.jpg" width="900" height="400" >
+<img src="./img/02.jpg" width="500" height="300">
 
 na mensagem será exibido algumas informações como, Untracked files, indica que há arquivos não monitorados no projeto, são arquivos que ainda não foram adicionados para o envio de uma nova atualização "commitar". para adcicionar esse arquivo é preciso utlizar o comando, git add nomeDoArquivo.
 
@@ -114,7 +114,7 @@ Caso haja arquivos que nunca foi editado e salvo pelo Git, basta utilizar o coma
 // com o ponto no final
 
 ```
-<img src="./img/03.png" width="900" height="400" >
+<img src="./img/03.png" width="500" height="300">
 
 Com isso, se rodar o git status, irá aparecer um retorno, incluindo Changes to committed, isto é, "mudanças a serem commitadas", ou salvas, enviadas.
 
@@ -127,7 +127,7 @@ Para salvar as modificações é preciso rodar comando git commit porém precisa
 
 ```
 
-<img src="./img/04.png" width="900" height="400" >
+<img src="./img/04.png" width="500" height="100">
 
 Após executar o comando será exibido a mensagem que configuramos e será mostrado quais foram as alterações.Se executarmos git status novamente irá mostrar que não há nada para ser commitado.
 
@@ -139,7 +139,7 @@ Poderemos verificar o histórico de alterações, cada mensagem de commits feito
 A informação seguinte refere se ao branch, ou "ramo" em que o commit se encontra. O HEAD e master quer dizer que é o local onde nos encontramos, no código, onde acontecem as alterações que fizermos, e que estamos em um ramo denominado master. Além de informações da autoria do commit, e-mail configurado, data do commit e mensagem.
 
 
-<img src="./img/05.png" width="900" height="400" >
+<img src="./img/05.png" width="500" height="300">
 
 O comando git log possui algumas variações:
 
@@ -160,7 +160,7 @@ Quando temos um arquivo no projeto que não desejamos fazer commit podemos ignor
 Se quisermos ignorar um arquivo basta abrir o aquivo .gitinore e adicionar o nome do arquivo, se for pasta adicionar o nome da com uma barra no final.
 
 
-<img src="./img/06.png" width="900" height="400" >
+<img src="./img/06.png" width="500" height="200" >
 
 ## Repositório remoto
 
@@ -205,14 +205,14 @@ Por padrão, se executar git branch no Git Bash, terá um único branch, master,
 Você pode visualizar isso de forma dinâmica pelo [Visualizing Git](https://git-school.github.io/visualizing-git/).
 
 
-<img src="./img/07.png" width="600" height="400" >
+<img src="./img/07.png" width="500" height="300">
 
 
 ### Unindo trabalhos
 
 È possível unir as ramificações (branch) do projeto através do comando git merge nomeDaBranch asim que ela ou outra branch esteja finalizada, ou feita alguma correção.Exemplo, após criar a branch titulo, entra na branch é feito dois commit, acessando a branch master e fazendo uma alteração no final é possível unir essas duas branch.
 
-<img src="./img/08.png" width="600" height="400">
+<img src="./img/08.png" width="500" height="300">
 
 ### Atualizando a branch
 
@@ -235,18 +235,18 @@ Durante atualização da branch podem gerar um commit a mais e dependendo da est
 ```
 Resultado.
 
-<img src="./img/09.png" width="600" height="400">
+<img src="./img/09.png" width="500" height="300">
 
 
 ## Resolvendo conflitos
 
 No momento de executar o comando git merge houver conflitos devido a uma falha no merge automático é recomendado corrigir primeiramente os conflitos e depois realizar o commit.
 
-<img src="./img/10.png" width="600" height="400">
+<img src="./img/10.png" width="600" height="100">
 
 Já no código irá aparecer linhas como  <<<<<<< HEAD (Current Change) e =======, onde estão o atual commit no master. E  ======= e >>>>>>> lista (Incoming Change), são os dados que estamos tentando trazer da branch lista. Ou seja, é exibida exatamente a diferença entre ambos. E que precisamos fazer para corrigir este conflito é remover as informações indesejadas.
 
-<img src="./img/11.png" width="600" height="400">
+<img src="./img/11.png" width="600" height="100">
 
 Após editar e salvar o arquivo executar o git status para verificar as informações dos arquivos modificados e em seguida executar git add nomeDoArquivo e depois o git commit para que o commit de merge seja realizado para enviar os arquivos execute git push local master.
 
