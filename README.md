@@ -15,7 +15,7 @@
 * [Branches](#Branches); 
 * [Resolvendo conflitos](#Resolvendo-conflitos);
 * [Git stash](#Git-stash);
-*[Voltando para um commit antigo](#Voltando-para-um-commit-antigo);
+* [Voltando para um commit antigo](#Voltando-para-um-commit-antigo);
 
 ### Para que serve o Git ?
 
