@@ -3,20 +3,21 @@
 
 <img src="./img/img0.png" width="900" height="400" >
 
-* [Para que serve o Git?](#Para-que-serve-o-Git-?);   
+* [Para que serve o Git?](#Para-que-serve-o-Git)?;   
 * [instalação](#Instalação);
 * [Configurando o  user](#Configurando-o-user);
 * [Inicialização criando um novo repositório](#Inicialização-criando-um-novo-repositório);
 * [Monitorando arquivos](#Monitorando-arquivos);
-* [Historico de alterações](#Histórico-de-alterações); 
+* [Historico de alterações](#Historico-de-alterações); 
 * [Git ignore](#Git-ignore); 
 * [Repositório remoto](#Repositório-remoto); 
 * [Clonando repositório ](#Clonando-repositório); 
 * [Branches](#Branches); 
+* [Resolvendo conflitos](#Resolvendo-conflitos)
 
-### Para que serve o Git ?
+### Para que serve o Git
 
-É comum que quando se trabalho com desenvolvimento, trabalhar com mais de uma pessoa no mesmo projeto. E com isso cada pessoa tem o projeto em sua maquina e as mesmas faram alterações ao logo do desenvolvimento. Quando uma  pessoa faz uma alteração no projeto as outras precisam ser notificadas sobre  o enviou dessas alterações por meios físicos como pendrives, HD externo não seria muito interessante até por que no momento da entrega de uma alteração outra já poderia ter sido feita. Essa situação séria um pouco confuso e poderia trazer alguns problemas durante o desenvolvimento, por isso existi algumas soluções e uma dela é a criação de um servidor específico para o envio das alterações dos arquivos. Todos da equipe terão acesso a este servidor.
+É comum quando se trabalho com desenvolvimento, trabalhar com mais de uma pessoa no mesmo projeto. E com isso cada pessoa tem o projeto em sua maquina e as mesmas faram alterações ao logo do desenvolvimento. Quando uma  pessoa faz uma alteração no projeto, as outras precisam ser notificadas sobre o enviou dessas alterações, o envio por meios físicos como pendrives, HD externo não seria muito interessante até por que no momento da entrega de uma alteração outra já poderia ter sido feita. Essa situação séria um pouco confuso e poderia trazer alguns problemas durante o desenvolvimento, por isso existi algumas soluções e uma dela é a criação de um servidor específico para o envio das alterações dos arquivos onde todos da equipe tem acesso a este servidor.
 O servidor precisa ter alguma ferramenta capaz de identificar que a versão enviada não é a mais recente e não permitir o envio do projeto sem antes o usuário baixar a atual versão do projeto já que antes do envio das suas alterações ocorreram uma ou mais alterações no projeto. Isso é chamado de controle de versão. E é isso que o GIT faz, mas existem outros sistemas de controle de versão como:
 
 * CVS
@@ -37,12 +38,12 @@ Caso você esteja utilizando Linux, algumas distribuições já vêm com o Git i
 
 Feito o download, executaremos o arquivo, e durante a instalação, existem algumas opções  como o "Git Bash" , que é uma forma de digitar comandos. O Git Bash fornece comandos com os quais quem desenvolve em Linux já está acostumado a usar, como o ls para mostrar arquivos e pastas existentes no diretório atual.
 
-A instalação padrão e clicando em "Next". Em "Adjusting your PATH environment", é possível definir se iremos usar apenas o Git Bash, ou então o Git de qualquer outra interface de linha de comando podem deixar padrão caso queira outra opção basta ler atentamente as opções.
+A instalação padrão é clicando em "Next". Em "Adjusting your PATH environment", é possível definir se iremos usar apenas o Git Bash, ou então o Git de qualquer outra interface de linha de comando podem deixar padrão caso queira outra opção basta ler atentamente as opções.
 
 Finalizada a instalação, podem desmarcar o box de "View Release Notes" e marcar "Launch Git Bash", para que se inicie a execução do Git Bash.
 para garantir que tudo ocorreu bem no terminal digiti git --version, ao que será retornado git e a versão instalada.
 
-## Configurando o user 
+## Configurando o  user 
 
 Antes de utilizar o git precisa informa quem é o usuário para que ele possa salvar os dados do autor das alterações.
 
@@ -76,7 +77,7 @@ Para inicializar o repositório é preciso criar uma pasta com ou sem um projeto
     git init.
 ```
 
-<img src="./img/01.png" width="800" height="100" >
+<img src="./img/01.png" width="900" height="400" >
 
 Todas as alterações que forem realizadas no arquivo localizado dentro deste repositório poderão ser mostradas pelo Git com algumas informações como, indicações do que foi modificado, quem modificou e outras. No final após criar será adicionado o do Git Bash ((master)).
 
@@ -88,7 +89,7 @@ Para verificar  o estado do repositório, ou analisar quais arquivos foram alter
  //comando
   git status.
 ```
-<img src="./img/02.jpg" width="900" height="300" >
+<img src="./img/02.jpg" width="900" height="400" >
 
 na mensagem será exibido algumas informações como, Untracked files, indica que há arquivos não monitorados no projeto, são arquivos que ainda não foram adicionados para o envio de uma nova atualização "commitar". para adcicionar esse arquivo é preciso utlizar o comando, git add nomeDoArquivo.
 
@@ -113,7 +114,7 @@ Caso haja arquivos que nunca foi editado e salvo pelo Git, basta utilizar o coma
 // com o ponto no final
 
 ```
-<img src="./img/03.png" width="900" height="200" >
+<img src="./img/03.png" width="900" height="400" >
 
 Com isso, se rodar o git status, irá aparecer um retorno, incluindo Changes to committed, isto é, "mudanças a serem commitadas", ou salvas, enviadas.
 
@@ -126,7 +127,7 @@ Para salvar as modificações é preciso rodar comando git commit porém precisa
 
 ```
 
-<img src="./img/04.png" width="900" height="100" >
+<img src="./img/04.png" width="900" height="400" >
 
 Após executar o comando será exibido a mensagem que configuramos e será mostrado quais foram as alterações.Se executarmos git status novamente irá mostrar que não há nada para ser commitado.
 
@@ -169,8 +170,8 @@ O repositório remoto é um servidor local onde podemos enviar alterações e as
     git init --bare
 ```
 
-Indicando que esse repositório contém apenas as alterações dos arquivos e não uma cópia física de cada um dos arquivos.Aṕos a criação do repositótio ogit fornece um caminho de onde foi criado.
-Copiar o caminho indicado na tela e retorne pelo terminal para a pasta na qual foi criado o projeto. Para que o servidor reconheça o repositório precisa seguir alguns passos.
+Indicando que esse repositório contém apenas as alterações dos arquivos e não uma cópia física de cada um dos arquivos.Aṕos a criação do repositótio o git fornece um caminho de onde foi criado. é preciso
+copiar o caminho indicado na tela e retornar pelo terminal para a pasta na qual foi criado o projeto. Para que o servidor reconheça o repositório precisa seguir alguns passos.
 
 O primeiro passo é roda o comando mais o caminho do servidor:
 
@@ -191,29 +192,65 @@ Dentro de uma nova pasta é possível clonar o repositório do servidor através
     git clone C:/Users/Documents/servidor copiaProjeto
 ```
 
-Isso fara com que essa nova pasta tenha acesso às novas alterações do projeto dentro da pasta copiaProjeto.
+Isso fará com que essa nova pasta tenha acesso às novas alterações do projeto dentro da pasta copiaProjeto.
 
 Caso a pasta esteja vazia é porque ainda não tive o envio de alterações. Depois dessas alterações enviadas através do commit, basta executar o comando git pull local master.
 
 ## Branches
 
+Em um trabalho compartilhado tem dois usuários ou mais usuários trabalhando no mesmo projeto e em partes diferentes e o master está sendo compartilhado entre eles, para evitar complicações é interessante ter uma maneira de separar em ramos de desenvolvimento(branches) para saber exatamente no que cada um está trabalhando.
+
+Por padrão, se executar git branch no Git Bash, terá um único branch, master, e é exatamente isto que o Git Bash mostra ao fim da linha. Para criar uma brache execute o comando, git branch nomeDaBranche, que criará este branch, embora tenha que mudar para ela manualmente, com git checkout nomeDaBranche.
+
+Você pode visualizar isso de forma dinâmica pelo [Visualizing Git](https://git-school.github.io/visualizing-git/).
 
 
+<img src="./img/07.png" width="600" height="400" >
 
 
+### Unindo trabalhos
+
+È possível unir as ramificações (branch) do projeto através do comando git merge nomeDaBranch asim que ela ou outra branch esteja finalizada, ou feita alguma correção.Exemplo, após criar a branch titulo, entra na branch é feito dois commit, acessando a branch master e fazendo uma alteração no final é possível unir essas duas branch.
+
+<img src="./img/08.png" width="600" height="400">
+
+### Atualizando a branch
+
+Durante atualização da branch podem gerar um commit a mais e dependendo da estratégia utilizada para gerar os commits, podem poluir o histórico de commits. Por isso é preciso atualizar a branch master com os commits de outras branch usando o comando git rebase nomeDaBranch.O comando git rebase atualiza a branch e junta as branch gerando apenas um commit de junção.
 
 
+É possível fazer um teste no [Visualizing Git](https://git-school.github.io/visualizing-git/#free) seguindo alguns passos:
 
 
+```css
+    clear
+    // caso não tenha a branch criada execute:  git branch titulo
+    git checkout -b titulo
+    git commit -m "teste1"
+    git commit -m "teste2"
+    git checkout master
+    git rebase titulo
+    git log
+
+```
+Resultado.
+
+<img src="./img/09.png" width="600" height="400">
 
 
+## Resolvendo conflitos
 
+No momento de executar o comando git merge houver conflitos devido a uma falha no merge automático é recomendado corrigir primeiramente os conflitos e depois realizar o commit.
 
+<img src="./img/10.png" width="600" height="400">
 
+Já no código irá aparecer linhas como  <<<<<<< HEAD (Current Change) e =======, onde estão o atual commit no master. E  ======= e >>>>>>> lista (Incoming Change), são os dados que estamos tentando trazer da branch lista. Ou seja, é exibida exatamente a diferença entre ambos. E que precisamos fazer para corrigir este conflito é remover as informações indesejadas.
 
+<img src="./img/11.png" width="600" height="400">
 
+Após editar e salvar o arquivo executar o git status para verificar as informações dos arquivos modificados e em seguida executar git add nomeDoArquivo e depois o git commit para que o commit de merge seja realizado para enviar os arquivos execute git push local master.
 
-
+Editaremos e salvaremos o arquivo, retornaremos ao Git Bash e executaremos git status, e teremos a informação de que houve uma modificação em dois lugares, na branch atual e aquela que estamos tentando unificar. Feita a correção, simplesmente utilizaremos git add index.html, e então git commit para que o commit de merge seja realizado. Desta vez, se executarmos git log --graph, teremos a indicação do merge de lista. Em seguida, poderemos usar git push local master.
 
 Fonte:
  https://git-scm.com/docs/git-init;
