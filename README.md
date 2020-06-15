@@ -76,7 +76,7 @@ Para inicializar o repositório é preciso criar uma pasta com ou sem um projeto
     git init.
 ```
 
-<img src="./img/01.png" width="500" height="300">
+<!-- <img src="./img/01.png" width="500" height="300"> -->
 
 Todas as alterações que forem realizadas no arquivo localizado dentro deste repositório poderão ser mostradas pelo Git com algumas informações como, indicações do que foi modificado, quem modificou e outras. No final após criar será adicionado o do Git Bash ((master)).
 
