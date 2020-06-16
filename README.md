@@ -8,6 +8,7 @@
 * [Configurando o  user](#Configurando-o-user);
 * [Inicialização criando um novo repositório](#Inicialização-criando-um-novo-repositório);
 * [Monitorando arquivos](#Monitorando-arquivos);
+* [Enviando commit](#Enviando-commit);
 * [Historico de alterações](#Historico-de-alterações); 
 * [Git ignore](#Git-ignore); 
 * [Repositório remoto](#Repositório-remoto); 
@@ -15,7 +16,9 @@
 * [Branches](#Branches); 
 * [Resolvendo conflitos](#Resolvendo-conflitos);
 * [Git stash](#Git-stash);
-*[Voltando para um commit antigo](#Voltando-para-um-commit-antigo);
+* [Voltando para um commit antigo](#Voltando-para-um-commit-antigo);
+* [Comparando alterações](#Comparando-alterações);
+* [Tags e releases](#Tags-e-releases).
 
 ### Para que serve o Git ?
 
@@ -134,9 +137,26 @@ Após executar o comando será exibido a mensagem que configuramos e será mostr
 
 Os commites devem serem feitos quando houver alterações significativas ou algum ponto que você quer lembrar. Não é recomendado executar commit quando algo no codigo não funciona, algumas pessoas defendem o uso do commit apesar no final do expediente outras dizem que devem ser feitos a cada alteração, não existi uma regra, e sim recomendações.
 
+## Enviando commit
+
+Para enviar estas alterações ao seu servidor local, execute git push local  master, mas se for remoto execute git push origin master, podendo alterar os branch desejado e enviar suas alteraçãoes para ele.
+
+```css
+
+    //enviar para servidor local
+    git push local master   
+
+   //enviar para repositório 
+    git push origin master  
+
+
+```
+
+
+
 ## Histórico de alterações
 
-Poderemos verificar o histórico de alterações, cada mensagem de commits feitos, o comando que poderemos utilizar para isto é git log, que nos mostrará diversas informações, sendo o primeiro deles um hash do commit, uma identificação única de cada commit, não existem dois commits com o mesmo hash.
+Poderemos verificar o histórico de alterações, cada mensagem de commits feitos, o comando que poderemos utilizar para isto é git log , que nos mostrará diversas informações, sendo o primeiro deles um hash do commit, uma identificação única de cada commit, não existem dois commits com o mesmo hash.
 A informação seguinte refere se ao branch, ou "ramo" em que o commit se encontra. O HEAD e master quer dizer que é o local onde nos encontramos, no código, onde acontecem as alterações que fizermos, e que estamos em um ramo denominado master. Além de informações da autoria do commit, e-mail configurado, data do commit e mensagem.
 
 
@@ -145,7 +165,7 @@ A informação seguinte refere se ao branch, ou "ramo" em que o commit se encont
 O comando git log possui algumas variações:
 
     * git log --oneline: exibir as informações por linhas;
-    * git log -p: exibir mais informações.
+    * git log -p: exibir mais informações.  (para sair da tela use wq)
 
 Para filtros em log cheatsheet há vários delas como:
 
@@ -184,6 +204,7 @@ Se execultar ocomando git remote irá exibir todos os repositórios locais.
 No local do caminho do servidor podemos informar uma URL de um servidor remoto ou o endereço de uma maquina na rede, qualquer endereço válido para um repositório Git.
 
 Após executar o comando git remote add local podemos rodar o comando git remote -v para exibir o endereço local do repositório. Além disso aparecerá informações como de onde os dados desse caminho serão buscado (fetch), e para onde serão enviados (push). Em alguns casos poderá buscar os dados de um local e enviar para outro.
+
 
 ## Clonando repositório
 
@@ -318,6 +339,47 @@ Para salvar essas alterações quando retorna para o master é preciso acessar o
 <img src="./img/15.png" width="500" height="300">
 
 Agora quando quiser retornar a trabalha com a branch criada basta rodar o comando git checkout.
+
+## Comparando alterações
+
+Com o comando git log -p (para sair da tela use wq) é possível o que foi modificado no projeto, o git possui o comando git diff capaz de exibir a diferença entre os commit. Se executar o comando git diff e nada for exibido é porque não tem nenhuma alteração que não tenha sido salva.
+
+Para fazer a comparação de commit especifico é preciso executar git diff + o hash ..( os dois pontos representam "até") + hash.
+```css
+   git diff  ea539b3..6ca12ac
+```
+
+O comando irá informar algumas informações como:
+
+```css
+    + linha adicionada
+    - linha removida
+    - linha modificada (versão antiga)
+    + linha modificada (nova versão)
+```
+
+<img src="./img/16.png" width="500" height="300">
+
+## Tags e releases
+
+No git é possível marcar pontos no projeto através do git tag, um ponto na aplicação como uma versão do projeto que não sofreram alterações. Para criar uma tag é utilizado o comando git tag -a, seguido do nome, para adicionar uma mensagem acrescenta -m "mensagem" e git tag exibi a lista de tags criadas. Para enviar a tag para o servidor ou repositório remoto use git push origin mais o nome da tag.
+
+```css
+
+    //cria uma tag
+    git tag -a novatag
+
+    //add mensagem
+    git tag -a novatag -m "Criando uma tag"
+
+    //listar tags
+    git tag
+
+    //enviar tag (local para o servidor e origin para o remoto)
+    git push local novaTag
+
+```
+
 
 
 Fonte:
