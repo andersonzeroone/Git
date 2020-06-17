@@ -15,6 +15,7 @@
 * [Clonando repositório ](#Clonando-repositório); 
 * [Branches](#Branches); 
 * [Resolvendo conflitos](#Resolvendo-conflitos);
+* [Ctrl + Z no Git](#Ctrl-+-Z-no-Git);
 * [Git stash](#Git-stash);
 * [Voltando para um commit antigo](#Voltando-para-um-commit-antigo);
 * [Comparando alterações](#Comparando-alterações);
@@ -83,25 +84,24 @@ Para inicializar o repositório é preciso criar uma pasta com ou sem um projeto
 
 <img src="./img/01.png" width="500" height="100">
 
-Todas as alterações que forem realizadas no arquivo localizado dentro deste repositório poderão ser mostradas pelo Git com algumas informações como, indicações do que foi modificado, quem modificou e outras. No final após criar será adicionado o do Git Bash ((master)).
+Todas as alterações que forem realizadas no arquivo localizado dentro deste repositório poderão ser mostradas pelo Git com algumas informações como, indicações do que foi modificado, quem modificou e outras. No final após criar será adicionado o do Git Bash (master).
 
 ### Comando Status
 
 Para verificar  o estado do repositório, ou analisar quais arquivos foram alterados use o comando git status.
 
 ```css
- //comando
-  git status.
+  git status
 ```
 <img src="./img/02.jpg" width="500" height="150">
 
-na mensagem será exibido algumas informações como, Untracked files, indica que há arquivos não monitorados no projeto, são arquivos que ainda não foram adicionados para o envio de uma nova atualização "commitar". para adcicionar esse arquivo é preciso utlizar o comando, git add nomeDoArquivo.
+Na mensagem será exibido algumas informações como, Untracked files, indica que há arquivos não monitorados no projeto, são arquivos que ainda não foram adicionados para o envio de uma nova atualização "commitar". para adcicionar esse arquivo é preciso utlizar o comando, git add nomeDoArquivo.
 
-Ao executar o comando git status obetmos algumas informações como,HEAD, working tree e index e cada uma delas possui um definição.
+Ao executar o comando git status obetmos algumas informações como,HEAD, working tree e index e cada uma delas possui um definição:
 
-HEAD: Estado atual do código.
-working tree: Local onde os arquivos estão sendo armazenados e editados.
-index: Local onde o Git armazena o que será commitado.
+#### HEAD: Estado atual do código, aponta para o último commit.
+#### working tree: Local onde os arquivos estão sendo armazenados e editados.
+#### index: Local onde o Git armazena o que será commitado.
 
 ## Monitorando arquivos
 
@@ -111,14 +111,12 @@ Caso haja arquivos que nunca foi editado e salvo pelo Git, basta utilizar o coma
 
     git add nomeDoArquivo
 
-    //se caso houver mais de um arquivo use
+    //se caso houver mais de um arquivo use com o ponto no final
 
     git add .
 
-// com o ponto no final
 
 ```
-<img src="./img/03.png" width="500" height="150">
 
 Com isso, se rodar o git status, irá aparecer um retorno, incluindo Changes to committed, isto é, "mudanças a serem commitadas", ou salvas, enviadas.
 
@@ -133,7 +131,7 @@ Para salvar as modificações é preciso rodar comando git commit porém precisa
 
 <img src="./img/04.png" width="500" height="100">
 
-Após executar o comando será exibido a mensagem que configuramos e será mostrado quais foram as alterações.Se executarmos git status novamente irá mostrar que não há nada para ser commitado.
+Após executar o comando será exibido a mensagem que configuramos e será mostrado quais foram as alterações. Se executarmos git status novamente irá mostrar que não há nada para ser commitado.
 
 Os commites devem serem feitos quando houver alterações significativas ou algum ponto que você quer lembrar. Não é recomendado executar commit quando algo no codigo não funciona, algumas pessoas defendem o uso do commit apesar no final do expediente outras dizem que devem ser feitos a cada alteração, não existi uma regra, e sim recomendações.
 
@@ -213,6 +211,11 @@ Dentro de uma nova pasta é possível clonar o repositório do servidor através
 ```css
     git clone C:/Users/Documents/servidor copiaProjeto
 ```
+Quando se trata de um servidor remoto, o comando será esse:
+
+```css
+    git clone usuário@servidor:/caminho/para/o/repositório
+```
 
 Isso fará com que essa nova pasta tenha acesso às novas alterações do projeto dentro da pasta copiaProjeto.
 
@@ -222,13 +225,23 @@ Caso a pasta esteja vazia é porque ainda não tive o envio de alterações. Dep
 
 Em um trabalho compartilhado tem dois usuários ou mais usuários trabalhando no mesmo projeto e em partes diferentes e o master está sendo compartilhado entre eles, para evitar complicações é interessante ter uma maneira de separar em ramos de desenvolvimento(branches) para saber exatamente no que cada um está trabalhando.
 
-Por padrão, se executar git branch no Git Bash, terá um único branch, master, e é exatamente isto que o Git Bash mostra ao fim da linha. Para criar uma brache execute o comando, git branch nomeDaBranche, que criará este branch, embora tenha que mudar para ela manualmente, com git checkout nomeDaBranche.
+Por padrão, se executar git branch no Git Bash, terá um único branch, master, e é exatamente isto que o Git Bash mostra ao fim da linha. Para criar uma brache execute o comando, git branch nomeDaBranche, que criará este branch, embora tenha que mudar para ela manualmente, com git checkout nomeDaBranch. É possível criar uma branch e acessar diretamente usando git checkout -b nomeDaBranch.Para remover a branch git branch -d nomeDaBranch.
 
-Você pode visualizar isso de forma dinâmica pelo [Visualizing Git](https://git-school.github.io/visualizing-git/).
+```css
 
+    //criar branch
+    git branch nomeDaBranche
 
-<img src="./img/07.png" width="500" height="300">
+    //acessar branch
+    git checkout titulo
 
+    //criar e acessar diretamente
+    git checkout -b nomeDaBranch
+
+    //remover branch
+    git branch -d nomeDaBranch
+
+```
 
 ### Unindo trabalhos
 
@@ -342,9 +355,9 @@ Agora quando quiser retornar a trabalha com a branch criada basta rodar o comand
 
 ## Comparando alterações
 
-Com o comando git log -p (para sair da tela use wq) é possível o que foi modificado no projeto, o git possui o comando git diff capaz de exibir a diferença entre os commit. Se executar o comando git diff e nada for exibido é porque não tem nenhuma alteração que não tenha sido salva.
+Com o comando git log -p (para sair da tela use wq) é possível ver o que foi modificado no projeto, o git possui o comando git diff capaz de exibir a diferença entre os commit. Se executar o comando git diff e nada for exibido é porque não tem nenhuma alteração que não tenha sido salva.
 
-Para fazer a comparação de commit especifico é preciso executar git diff + o hash ..( os dois pontos representam "até") + hash.
+Para fazer a comparação de commit, é preciso executar git diff + o hash ..( os dois pontos representam "até") + hash.
 ```css
    git diff  ea539b3..6ca12ac
 ```
@@ -362,7 +375,7 @@ O comando irá informar algumas informações como:
 
 ## Tags e releases
 
-No git é possível marcar pontos no projeto através do git tag, um ponto na aplicação como uma versão do projeto que não sofreram alterações. Para criar uma tag é utilizado o comando git tag -a, seguido do nome, para adicionar uma mensagem acrescenta -m "mensagem" e git tag exibi a lista de tags criadas. Para enviar a tag para o servidor ou repositório remoto use git push origin mais o nome da tag.
+No git é possível marcar pontos para realeses no projeto através do git tag, um ponto na aplicação como uma versão do projeto que não sofreram alterações. Para criar uma tag é utilizado o comando git tag -a, seguido do nome, para adicionar uma mensagem acrescenta -m "mensagem" e git tag para exibir a lista de tags criadas. Para enviar a tag para o servidor ou repositório remoto use git push origin mais o nome da tag.
 
 ```css
 
