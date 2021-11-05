@@ -3,7 +3,7 @@
 
 <img src="./img/img0.png" width="800" height="300">
 
-* [Para que serve o Git?](#Para-que-serve-o-Git);   
+* [Para que serve o Git?](#para-que-serve)   
 * [instalação](#Instalação);
 * [Configurando o  user](#Configurando-o-user);
 * [Inicialização criando um novo repositório](#Inicialização-criando-um-novo-repositório);
@@ -21,10 +21,10 @@
 * [Comparando alterações](#Comparando-alterações);
 * [Tags e releases](#Tags-e-releases).
 
-### Para que serve o Git ?
+### Para que serve
 
-É comum quando se trabalho com desenvolvimento, trabalhar com mais de uma pessoa no mesmo projeto. E com isso cada pessoa tem o projeto em sua maquina e as mesmas faram alterações ao logo do desenvolvimento. Quando uma  pessoa faz uma alteração no projeto, as outras precisam ser notificadas sobre o enviou dessas alterações, o envio por meios físicos como pendrives, HD externo não seria muito interessante até por que no momento da entrega de uma alteração outra já poderia ter sido feita. Essa situação séria um pouco confuso e poderia trazer alguns problemas durante o desenvolvimento, por isso existi algumas soluções e uma dela é a criação de um servidor específico para o envio das alterações dos arquivos onde todos da equipe tem acesso a este servidor.
-O servidor precisa ter alguma ferramenta capaz de identificar que a versão enviada não é a mais recente e não permitir o envio do projeto sem antes o usuário baixar a atual versão do projeto já que antes do envio das suas alterações ocorreram uma ou mais alterações no projeto. Isso é chamado de controle de versão. E é isso que o GIT faz, mas existem outros sistemas de controle de versão como:
+É comum quando se trabalha com desenvolvimento, trabalhar com mais de uma pessoa e cada uma ter o projeto em sua maquina e que fazem alterações ao logo do desenvolvimento. Quando uma pessoa faz uma alteração no projeto, as outras precisam ser notificadas sobre o enviou dessas alterações, o envio por meios físicos como pendrives, HD externo não seria muito interessante até por que no momento da entrega de uma alteração outra já poderia ter sido feita. Essa situação séria um pouco confuso e poderia trazer alguns problemas durante o desenvolvimento, por isso existi algumas soluções e uma dela é a criação de um servidor específico para o envio das alterações dos arquivos onde a equipe tem acesso a este servidor.
+O servidor precisa ter alguma ferramenta capaz de identificar que a versão enviada não é a mais recente e não permitir o envio do projeto sem antes o usuário baixar a versão atual do projeto já que antes do envio das suas alterações ocorreram uma ou mais alterações. Isso é chamado de controle de versão e é isso que o GIT faz, mas existem outros sistemas de controle de versão como:
 
 * CVS
 * SVN
@@ -32,7 +32,7 @@ O servidor precisa ter alguma ferramenta capaz de identificar que a versão envi
 * GIT
 
 
-O Git é o mais utilizado por conta de  algumas características vantajosas, como permitir uma cópia do projeto, um repositório do projeto em sua máquina, para que se possa trabalhar em cima dela e então enviá-lo para outro repositório, o que se denomina repositórios distribuídos.
+O Git é o mais utilizado por conta de algumas características vantajosas, como permitir uma cópia do projeto, um repositório do projeto em sua máquina para que se possa trabalhar em cima dela e então enviá-lo para outro repositório, o que se denomina repositórios distribuídos.
 
 ## Instalação 
 
