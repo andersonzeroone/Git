@@ -539,7 +539,6 @@ Fontes:
 [![Gmail Badge](https://img.shields.io/badge/-anderson.pablo02@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:anderson.pablo02@gmail.com)](mailto:anderson.pablo02@gmail.com)
 
 ---
-
 ## Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
