@@ -6,7 +6,7 @@
 
 * [Para que serve o Git?](#para-que-serve);  
 * [instalação](#instalação);
-* [Configurando o  user](#configurando-o-user);
+* [Configurando o user](#configurando-o-user);
 * [O que é repositório?](#o-que-e-repositório)
 * [Criando um novo repositório](#criando-um-novo-repositório);
 * [Comando Status](#comando-status);
@@ -64,7 +64,7 @@ Finalizada a instalação, podem desmarcar o box de "View Release Notes” e mar
 para garantir que tudo ocorreu bem no terminal digiti git --version, ao que será retornado git e a versão instalada.
 
 ---
-## Configurando o  user 
+## Configurando o user 
 
 Antes de utilizar o git precisa informa quem é o usuário para que ele possa salvar os dados do autor das alterações.
 
